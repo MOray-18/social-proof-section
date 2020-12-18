@@ -26,6 +26,23 @@ body {
   justify-content: space-around;
 }
 
+/* Ratings Section */
+.ratings {
+  grid-column: 7 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#top {
+  align-self: flex-start;
+}
+
+#bottom {
+  align-self: flex-end;
+}
+
 /* Attribution Section */
 .attribution {
   font-size: 11px;
