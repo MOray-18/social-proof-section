@@ -49,12 +49,29 @@ img {
 }
 
 /* Review Section */
+.reviews {
+  grid-template-rows: repeat(12, 20px);
+}
+
 #start {
+  grid-row: 1 / span 10;
   grid-column: 1 / 5;
+}
+
+#middle {
+  grid-row: 2 / span 10;
+  grid-column: 5 / 9;
+}
+
+#end {
+  grid-row: 3 / span 10;
+  grid-column: 9 / 13;
 }
 
 .card {
   padding: 1rem;
+  height: 200px;
+  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
