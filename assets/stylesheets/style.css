@@ -8,34 +8,39 @@
 
 body {
   margin: 0 auto;
-  width: 83%;
   font-size: 15px;
   font-family: "Spartan", sans-serif;
 }
 
 .container {
   margin: 1rem auto;
-  padding: 1.5rem 1rem;
+  padding: 1.25rem 0.75rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 1.5rem;
   align-items: stretch;
 }
 
-img {
-  border-radius: 50%;
-}
+@media only screen and (max-width: 800px) {
+  body {
+    font-size: 12px;
+    text-align: center;
+  }
 
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 /* Typography */
 h1 {
   margin: 1rem 0;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: hsl(300, 43%, 22%);
 }
 
 h3 {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: hsl(300, 24%, 96%);
 }
@@ -45,9 +50,6 @@ p {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.4px;
-}
-
-span {
 }
 
 /* Heading Section */
@@ -62,6 +64,13 @@ span {
   color: hsl(303, 10%, 53%);
 }
 
+@media only screen and (max-width: 800px) {
+  .heading {
+    margin-bottom: 1rem;
+    grid-column: 1 / -1;
+  }
+}
+
 /* Ratings Section */
 .ratings {
   grid-column: 7 / -1;
@@ -72,16 +81,22 @@ span {
 }
 
 .ratings div {
-  padding-left: 2rem;
+  padding-left: 1.5rem;
   width: 85%;
   height: 3rem;
   background-color: hsl(300, 24%, 96%);
+  border-radius: 8px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
 }
 
+.ratings span {
+  flex-shrink: 0;
+}
+
 .ratings p {
-  margin-left: 2rem;
   font-weight: 700;
   color: hsl(300, 43%, 22%);
 }
@@ -94,9 +109,21 @@ span {
   align-self: flex-end;
 }
 
+@media only screen and (max-width: 800px) {
+  .ratings {
+    grid-column: 1 / -1;
+  }
+
+  .ratings div {
+    width: 100%;
+    height: 5rem;
+    flex-direction: column;
+  }
+}
+
 /* Review Section */
 .reviews {
-  grid-template-rows: repeat(12, 20px);
+  grid-template-rows: repeat(12, 1fr);
 }
 
 #start {
@@ -116,19 +143,26 @@ span {
 
 .card {
   padding: 1rem;
-  height: 200px;
   background-color: hsl(300, 43%, 22%);
+  border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
+.card img {
+  max-width: 56px;
+  max-height: 56px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
 .details {
-  padding-left: 2rem;
+  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  flex-grow: 1;
+  flex: 1 2;
 }
 
 .details p {
@@ -141,6 +175,27 @@ span {
   color: hsl(300, 24%, 96%);
 }
 
+@media only screen and (max-width: 800px) {
+  .reviews {
+    row-gap: 1rem;
+    text-align: left;
+  }
+
+  #start {
+    grid-row: 1 / span 4;
+    grid-column: 1 / -1;
+  }
+
+  #middle {
+    grid-row: 5 / span 4;
+    grid-column: 1 / -1;
+  }
+
+  #end {
+    grid-row: 9 / span 4;
+    grid-column: 1 / -1;
+  }
+}
 /* Attribution Section */
 .attribution {
   font-size: 11px;
